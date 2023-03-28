@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestRunner.WebRunnerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-03-25T16:23:27" hostname="DESKTOP-ACI7R7L" time="56.491">
+  <properties/>
+  <testcase name="runScenario[0](&quot;Add customer with valid data&quot;, &quot;Optional[Bank Manager Login]&quot;)" classname="TestRunner.WebRunnerTest" time="39.501"/>
+  <testcase name="runScenario[1](&quot;Add customer with valid data&quot;, &quot;Optional[Bank Manager Login]&quot;)" classname="TestRunner.WebRunnerTest" time="9.941"/>
+  <testcase name="runScenario[2](&quot;Add customer name and currency&quot;, &quot;Optional[Open Account]&quot;)" classname="TestRunner.WebRunnerTest" time="2.24"/>
+  <testcase name="runScenario[3](&quot;Customer information and delete customer&quot;, &quot;Optional[Delete Account]&quot;)" classname="TestRunner.WebRunnerTest" time="4.805"/>
+  <system-out><![CDATA[
+@test
+Scenario Outline: Add customer with valid data        # src/test/resources/Features/01_addCustomer.feature:14
+  Given manager to the add customer page              # WebStepDefination.AddCustomerStepDefination.managerToTheAddCustomerPage()
+  When click bank manager login                       # WebStepDefination.AddCustomerStepDefination.clickBankManagerLogin()
+  And select add customer button                      # WebStepDefination.AddCustomerStepDefination.selectAddCustomerButton()
+  And manger enters 'Sadik' and 'Rahman' and '3300'   # WebStepDefination.AddCustomerStepDefination.mangerEntersFirstNameAndLastNameAndPostCode(java.lang.String,java.lang.String,java.lang.String)
+  And click add customer button                       # WebStepDefination.AddCustomerStepDefination.clickAddCustomerButton()
+Confirmation message: Customer added successfully with customer id :6
+  Then manager will navigate to successful popup page # WebStepDefination.AddCustomerStepDefination.managerWillNavigateToSuccessfulPopupPage()
+
+@test
+Scenario Outline: Add customer with valid data        # src/test/resources/Features/01_addCustomer.feature:15
+  Given manager to the add customer page              # WebStepDefination.AddCustomerStepDefination.managerToTheAddCustomerPage()
+  When click bank manager login                       # WebStepDefination.AddCustomerStepDefination.clickBankManagerLogin()
+  And select add customer button                      # WebStepDefination.AddCustomerStepDefination.selectAddCustomerButton()
+  And manger enters 'Rafi' and 'Azwad' and '2200'     # WebStepDefination.AddCustomerStepDefination.mangerEntersFirstNameAndLastNameAndPostCode(java.lang.String,java.lang.String,java.lang.String)
+  And click add customer button                       # WebStepDefination.AddCustomerStepDefination.clickAddCustomerButton()
+Confirmation message: Customer added successfully with customer id :6
+  Then manager will navigate to successful popup page # WebStepDefination.AddCustomerStepDefination.managerWillNavigateToSuccessfulPopupPage()
+
+@test
+Scenario: Add customer name and currency # src/test/resources/Features/02_openAccount.feature:3
+  Given click open account               # WebStepDefination.OpenAccountStepDefination.clickOpenAccount()
+  And select customer name and currency  # WebStepDefination.OpenAccountStepDefination.selectCustomerNameAndCurrency()
+  And click process button               # WebStepDefination.OpenAccountStepDefination.clickProcessButton()
+confimation msg: Account created successfully with account Number :1016
+  Then navigate the popup page           # WebStepDefination.OpenAccountStepDefination.navigateThePopupPage()
+
+@test
+Scenario: Customer information and delete customer # src/test/resources/Features/03_deleteCustomer.feature:4
+  Given user in customer page                      # WebStepDefination.DeleteAccountStepDefination.userInCustomerPage()
+  When search customer name                        # WebStepDefination.DeleteAccountStepDefination.searchCustomerName()
+  And click delete button                          # WebStepDefination.DeleteAccountStepDefination.clickDeleteButton()
+  Then successfully go to home page                # WebStepDefination.DeleteAccountStepDefination.successfullyGoToHomePage()
+]]></system-out>
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+1679761436558	geckodriver	INFO	Listening on 127.0.0.1:2062
+1679761437291	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "36220" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileKZk8Ve"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1679761437632	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1679761437637	Marionette	INFO	Listening on port 5170
+WebDriver BiDi listening on ws://127.0.0.1:36220
+Read port: 5170
+1679761437950	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileKZk8Ve\\search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:36220/devtools/browser/853f9795-7e53-4831-9102-d368a404fc29
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.globalsqa.com."
+1679761449728	geckodriver	INFO	Listening on 127.0.0.1:25396
+1679761450224	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "31794" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileIJjcTe"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1679761450568	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1679761450575	Marionette	INFO	Listening on port 5216
+WebDriver BiDi listening on ws://127.0.0.1:31794
+Read port: 5216
+1679761450873	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileIJjcTe\\search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:31794/devtools/browser/bd4afe96-111f-4792-b850-cc2133bcbae8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.globalsqa.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.globalsqa.com."
+]]></system-err>
+</testsuite>
